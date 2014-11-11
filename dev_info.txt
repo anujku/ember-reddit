@@ -7,3 +7,7 @@ https://ssl.reddit.com/api/v1/authorize?client_id=enlgITDGChbWWg&response_type=c
 
 
 http://localhost:4200/?state=RANDOM_STRING&code=1htNpWbgOlCHAQBV-AarJnw_JKc
+
+
+client_id = enlgITDGChbWWg
+secret = IDv50zqfY5grb5sY1CsDU1xTKLI
