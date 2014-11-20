@@ -1,6 +1,6 @@
 <ul>
 	{{#each item in model}}
-		<li><a {{bind-attr href=item.url}}>{{item.title}}</a> ({{item.domain}})</li>
+		<li>{{thumbnail-preview url=item.thumbnail}}<a {{bind-attr href=item.url}}>{{item.title}}</a> ({{item.domain}})</li>
 	{{/each}}
 </ul>
 

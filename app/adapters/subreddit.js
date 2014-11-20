@@ -12,8 +12,9 @@ export default Ember.Object.extend({
 					id: c.id,
 					title: c.data.title,
 					domain: c.data.domain,
-					url: c.data.url
-				}
+					url: c.data.url,
+					thumbnail: c.data.thumbnail
+				};
 			});
 		});
 	}
