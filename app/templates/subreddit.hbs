@@ -1,6 +1,10 @@
 <ul>
-	{{#each item in model}}
-		<li>{{thumbnail-preview url=item.thumbnail}}<a {{bind-attr href=item.url}}>{{item.title}}</a> ({{item.domain}})</li>
+	{{#each item in model.children}}
+		<li>
+			{{format-number item.data.score}}
+			{{thumbnail-preview url=item.data.thumbnail}}
+			<a {{bind-attr href=item.data.url}}>{{item.data.title}}</a> ({{item.data.domain}})
+		</li>
 	{{/each}}
 </ul>
 
