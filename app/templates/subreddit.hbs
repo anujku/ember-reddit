@@ -1,10 +1,6 @@
-<ul>
+<ul class="things">
 	{{#each item in model.children}}
-		<li>
-			{{format-number item.data.score}}
-			{{thumbnail-preview url=item.data.thumbnail}}
-			<a {{bind-attr href=item.data.url}}>{{item.data.title}}</a> ({{item.data.domain}})
-		</li>
+		{{view "thing" item=item}}
 	{{/each}}
 </ul>
 
