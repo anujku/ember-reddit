@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	tagName: 'div',
+	tagName: 'a',
 	classNames: ['thumbnail-preview'],
-	classNameBindings: ['hasValidUrl::self'],
-	hasValidUrl: Ember.computed('url', function() {
-		var url = this.get('url');
-		return !(!url || url === 'self');
+	classNameBindings: ['hasValidSrc::self'],
+	attributeBindings: ['url:href'],
+
+	hasValidSrc: Ember.computed('src', function() {
+		var src = this.get('src');
+		return !(!src || src === 'self');
 	})
 });
