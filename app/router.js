@@ -6,8 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.resource('subreddit', { path: '/r/:subreddit_id'});
-	this.resource('user', { path: 'u/:user_id'});
+	this.resource('frontpage', { path: '/' });
+	this.resource('subreddit', { path: '/r/:subreddit' }, function() {
+		this.route('sort', { path: ':sort' });
+	});
+	this.resource('user', { path: 'u/:user' });
 });
 
 export default Router;
