@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('route:subreddit/comments', 'SubredditCommentsRoute', {
+moduleFor('route:subreddit-default', 'SubredditDefaultRoute', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
