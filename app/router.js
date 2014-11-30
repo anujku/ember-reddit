@@ -8,9 +8,11 @@ var Router = Ember.Router.extend({
 Router.map(function() {
 	this.resource('frontpage', { path: '/' });
 	this.resource('subreddit', { path: '/r/:subreddit' }, function() {
+		this.resource('comments', { path: 'comments/:name'});
 		this.route('sort', { path: ':sort' });
 	});
 	this.resource('user', { path: 'u/:user' });
+	this.resource('domain', { path: 'domain/:domain'});
 });
 
 export default Router;
