@@ -7,7 +7,7 @@
 	<p class="tagline">Submitted {{time-ago datetime=created_utc}} by {{link-to author 'user' author}}</p>
 	<ul class="flat-list buttons">
 		<li class="first">
-			{{#link-to 'comments' 'emberjs' id}}{{num_comments}} comments{{/link-to}}
+			{{#link-to 'comments' currentSub id}}{{num_comments}} comments{{/link-to}}
 		</li>
 		<li class="share"></li>
 	</ul>

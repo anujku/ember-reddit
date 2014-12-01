@@ -1,1 +1,7 @@
+<ul>
+	{{#each item in model.children}}
+		<li>{{item.data.id}} - {{item.data.author}}<li>
+	{{/each}}
+</ul>
+
 {{outlet}}

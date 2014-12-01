@@ -10,7 +10,7 @@ export default Ember.Object.extend({
 
 		// add subreddit and sort onto url, then remove prop from params, as we don't want them in the ajax:data
 		if (params.subreddit) {
-			url += '/r/' + params.subreddit;
+			url += 'r/' + params.subreddit;
 			delete params.subreddit;
 		}
 
