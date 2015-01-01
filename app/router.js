@@ -6,9 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.route('subredditDefault', { path: 'r/:subreddit' });
-	this.route('subreddit', { path: 'r/:subreddit/:sort' });
-	this.route('comments', { path: 'r/:subreddit/comments/:name' });
+
+	this.resource('subreddit', { path: 'r/:subreddit' }, function() {
+		this.route('sort', { path: ':sort'});
+		this.route('comments', { path: 'comments/:name'});
+	});
 
 	this.route('user', { path: 'u/:user' });
 	this.route('domain', { path: 'domain/:domain'});

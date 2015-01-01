@@ -9,6 +9,8 @@ export default Ember.ObjectController.extend({
 
 	currentSub: null,
 
+	isFrontpage: false,
+
 	hasAfter: Ember.computed('model.after', function() {
 		return !!this.get('model.after');
 	}),

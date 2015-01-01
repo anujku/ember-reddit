@@ -1,13 +1,12 @@
 import Ember from 'ember';
-import SubredditMixin from '../mixins/subreddit-controller';
+import SubredditMixin from '../mixins/subreddit-route';
 
 export default Ember.Route.extend(SubredditMixin, {
 	controllerName: 'subreddit',
 	templateName: 'subreddit',
 
-	afterModel: function(model) {
-		model.isFrontpage = true;
-
-		this._super(model);
+	setupController: function(controller, model) {
+		this._super(controller, model);
+		controller.set('isFrontpage', true);
 	}
 });
