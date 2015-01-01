@@ -37,7 +37,9 @@ export default Ember.Object.extend({
 				modhash: result.data.modhash,
 				children: Ember.A(result.data.children.map(function (child) {
 					return thing.create(child);
-				}))
+				})),
+				after: result.data.after,
+				before: result.data.before
 			});
 		});
 	}

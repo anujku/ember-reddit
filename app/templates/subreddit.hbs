@@ -2,4 +2,19 @@
 	{{view "thing" context=item currentSub=currentSub}}
 {{/each}}
 
+<div class="nav-buttons">
+	<span class="nextprev">
+		view more:
+		{{#if hasBefore}}
+			{{#link-to 'subredditDefault' currentSub (query-params count=prevCount after=model.after)}}‹ prev{{/link-to}}  
+		{{/if}}
+		{{#if hasAfter}}
+		  {{#link-to 'subredditDefault' currentSub (query-params count=nextCount after=model.after)}}next ›{{/link-to}}
+		{{/if}}
+	</span>
+	<span class="next-suggestions">
+		or try a {{#link-to 'subredditDefault' 'random'}}random subreddit{{/link-to}}
+	</span>
+</div>
+
 {{outlet}}
