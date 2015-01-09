@@ -36,6 +36,7 @@ export default Ember.Object.extend({
 			return Ember.Object.create({
 				modhash: result.data.modhash,
 				children: Ember.A(result.data.children.map(function (child) {
+					child.data = Ember.Object.create(child.data);
 					return thing.create(child);
 				})),
 				after: result.data.after,

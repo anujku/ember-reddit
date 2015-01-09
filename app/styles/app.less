@@ -8,6 +8,11 @@ ol, ul {
 	list-style: none;
 }
 
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
 // mixins
 .sprite() {
 	background-image: url('/assets/images/sprite-reddit.png');
@@ -128,7 +133,7 @@ a {
 	}
 }
 
-.thumbnail-preview {
+.thumbnail {
 	float: left;
 	font-size: 0px;
 	margin: 0px 5px 2px 9px;
@@ -139,7 +144,12 @@ a {
 		.sprite();
 		height: 50px;
 		background-position: 0px -491px;
-		
+	}
+
+	&.default {
+		.sprite();
+		height: 50px;
+		background-position: 0px -435px;	
 	}
 }
 
@@ -221,6 +231,31 @@ a {
 	.score {
 		text-align: center;
 		color: #c6c6c6;
+	}
+
+	.usertext .md {
+		padding: 0 5px;
+		background-color: #fafafa;
+		border: 1px solid #369;
+		border-radius: 7px;
+	}
+}
+
+.md {
+	max-width: 60em;
+	overflow: auto;
+	font-size: small;
+
+	> * {
+		margin-bottom: 0px;
+	}
+
+	p, h1 {
+		margin: 5px 0;
+	}
+
+	pre {
+		margin: 10px;
 	}
 }
 
@@ -361,4 +396,44 @@ ul.flat-vert {
 
 .next-suggestions {
 	margin-left: 0.75em;
+}
+
+.expando-button {
+	float: left;
+	height: 23px;
+	width: 23px;
+	margin: 2px 5px 2px 0;
+	background: #ffffff none no-repeat scroll center center;
+
+	&.selftext {
+		.sprite();
+		&.collapsed {
+			background-position: -90px -547px;
+
+			&:hover {
+				background-position: -61px -547px;
+			}
+		}
+
+		&.expanded {
+			.sprite();
+
+			&:hover {
+				background-position: 0px -584px;
+			}
+		}
+	}
+}
+
+.expando {
+	clear: left;
+	margin: 5px 0;
+}
+
+.usertext {
+	font-size: small;
+}
+
+.hide {
+	display: none;
 }
