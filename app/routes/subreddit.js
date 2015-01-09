@@ -7,5 +7,10 @@ export default Ember.Route.extend(SubredditMixin, {
 		controller.set('isFrontpage', false);
 
 		controller.set('currentSub', this.paramsFor('subreddit').subreddit);
+	},
+
+	afterModel: function(model, transition) {
+		console.log(transition);
+		console.log(this.get('router'));
 	}
 });
