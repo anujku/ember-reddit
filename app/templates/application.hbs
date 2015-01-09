@@ -3,17 +3,8 @@
 		todo: my subreddits
 	</div>
 	<div id="header-bottom-left">
-		{{link-to 'reddit.com' 'application' id="header-img" class="default-header"}}
-		<ul class="tabmenu">
-			<li class="selected">hot</li>
-			<li>new</li>
-			<li>rising</li>
-			<li>controversial</li>
-			<li>top</li>
-			<li>gilded</li>
-			<li>wiki</li>
-			<li>promoted</li>
-		</ul>
+		{{link-to "reddit.com" "application" id="header-img" class="default-header"}}
+		{{outlet "tabmenu"}}
 	</div>
 </div>
 

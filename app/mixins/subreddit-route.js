@@ -9,7 +9,11 @@ export default Ember.Mixin.create({
 		before: { refreshModel: true }
 	},
 
+	controllerName: 'subreddit',
+	templateName: 'subreddit',
+
 	model: function(params) {
+		params.subreddit = params.subreddit || this.paramsFor('subreddit').subreddit;
 		return this.store.find('subreddit', params);
 	},
 

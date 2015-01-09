@@ -13,7 +13,7 @@
 	<p class="tagline">Submitted {{time-ago datetime=created_utc}} by {{link-to author 'user' author}}</p>
 	<ul class="flat-list buttons">
 		<li class="first">
-			{{#link-to "subreddit.comments" subreddit id}}{{num_comments}} comments{{/link-to}}
+			{{#link-to "comments" subreddit id}}{{num_comments}} comments{{/link-to}}
 		</li>
 		<li class="share"></li>
 	</ul>
