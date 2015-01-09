@@ -12,12 +12,19 @@ export default Ember.View.extend({
 		return Ember.$('<div>').html(this.get('context.selftext_html')).text();
 	}),
 
+	hasMediaEmbed: Ember.computed('context.media_embed', function() {
+		return !!this.get('context.media_embed').content;
+	}),
+
+	renderedMediaEmbed: Ember.computed('context.media_embed', function() {
+		return Ember.$('<div>').html(this.get('context.media_embed').content).text();
+	}),
+
 	isExpandoExpanded: false,
 
 	actions: {
-		expandSelfText: function() {
+		expandExpando: function() {
 			this.toggleProperty('isExpandoExpanded');
-			console.log(this.get('isExpandoExpanded'));
 		}
 	}
 });
