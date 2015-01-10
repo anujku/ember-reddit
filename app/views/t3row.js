@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.View.extend({
 	templateName: 't3row',
 	classNames: ['t3', 'link'],
+	classNameBindings: ['hasLinkFlair:linkflair'],
 
 	hasSelfText: Ember.computed('context.selftext_html', function() {
 		return !!this.get('context.selftext_html');
@@ -21,6 +22,10 @@ export default Ember.View.extend({
 	}),
 
 	isExpandoExpanded: false,
+
+	hasLinkFlair: Ember.computed('context.link_flair_text', function() {
+		return !!this.get('context.link_flair_text');
+	}),
 
 	actions: {
 		expandExpando: function() {

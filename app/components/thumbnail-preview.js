@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	tagName: 'a',
 	classNames: ['thumbnail'],
-	classNameBindings: ['isSelf:self', 'isDefault:default'],
+	classNameBindings: ['isSelf:self', 'isDefault:default', 'isNsfw:nsfw'],
 	attributeBindings: ['url:href'],
 
 	isSelf: Ember.computed('src', function() {
@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 	}),
 
 	isDefault: Ember.computed('src', function() {
-		return this.get('src') === 'default';
+		return this.get('src') === 'default' || this.get('src') === '';
 	}),
 
 	hasValidSrc: Ember.computed('src', function() {
