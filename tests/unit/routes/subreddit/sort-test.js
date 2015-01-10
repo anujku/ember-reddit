@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('route:subreddit/hot', 'SubredditHotRoute', {
+moduleFor('route:subreddit/sort', 'SubredditSortRoute', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

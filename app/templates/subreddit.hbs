@@ -1,5 +1,7 @@
 {{#each item in model.children}}
 	{{view "thing" context=item currentSub=currentSub}}
+{{else}}
+	<p id="noresults" class="error">theredoesn't seem to be anything here</p>
 {{/each}}
 
 <div class="nav-buttons">
@@ -26,5 +28,3 @@
 		or try a {{#link-to 'subreddit' 'random'}}random subreddit{{/link-to}}
 	</span>
 </div>
-
-{{outlet}}

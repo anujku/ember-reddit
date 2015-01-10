@@ -1,12 +1,11 @@
 <span class="hover pagename redditname">
-	{{link-to currentSub "subreddit.hot" currentSub}}
+	{{link-to currentSub "subreddit.index" currentSub}}
 </span>
 <ul class="tabmenu">
-	<li>{{link-to "hot" "subreddit.hot" currentSub}}</li>
-	<li>{{link-to "new" "subreddit.new" currentSub}}</li>
-	<li>{{link-to "rising" "subreddit.rising" currentSub}}</li>
-	<li>{{link-to "controversial" "subreddit.controversial" currentSub}}</li>
-	<li>{{link-to "top" "subreddit.top" currentSub}}</li>
-	<li>{{link-to "gilded" "subreddit.gilded" currentSub}}</li>
-	<li>{{link-to "promoted" "subreddit.promoted" currentSub}}</li>
+	<li>{{link-to "hot" "subreddit.index" currentSub}}</li>
+	<li>{{link-to "new" "subreddit.sort" currentSub "new"}}</li>
+	<li>{{link-to "rising" "subreddit.sort" currentSub "rising"}}</li>
+	<li>{{link-to "controversial" "subreddit.sort" currentSub "controversial"}}</li>
+	<li>{{link-to "top" "subreddit.sort" currentSub "top"}}</li>
+	<li>{{link-to "gilded" "subreddit.sort" currentSub "gilded"}}</li>
 </ul>

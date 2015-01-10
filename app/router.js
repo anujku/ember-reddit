@@ -9,16 +9,9 @@ Router.map(function() {
   this.resource("subreddit", {
     path: "r/:subreddit"
   }, function() {
-    this.route("hot", {
-      path: "/"
+    this.route("sort", {
+      path: ":sort"
     });
-
-    this.route("new");
-    this.route("rising");
-    this.route("controversial");
-    this.route("top");
-    this.route("gilded");
-    this.route("promoted");
 
     this.resource("comments", {
       path: "comments/:name"
