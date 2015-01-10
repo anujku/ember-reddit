@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import ajax from 'ic-ajax';
-import thing from '../models/thing';
+import parseListing from '../utils/parse-listing';
 
 export default Ember.Object.extend({
 	find: function(name, params) {
@@ -32,16 +32,7 @@ export default Ember.Object.extend({
 			data: params
 		}).then(function(result) {
 
-			// assume kind == 'Listing'
-			return Ember.Object.create({
-				modhash: result.data.modhash,
-				children: Ember.A(result.data.children.map(function (child) {
-					child.data = Ember.Object.create(child.data);
-					return thing.create(child);
-				})),
-				after: result.data.after,
-				before: result.data.before
-			});
+			return parseListing(result);
 		});
 	}
 });

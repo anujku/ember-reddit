@@ -136,6 +136,10 @@ a {
 			width: 2.2ex;
 		}
 	}
+
+	.spacer {
+		margin-bottom: 5px;
+	}
 }
 
 .thumbnail {
@@ -485,4 +489,98 @@ ul.flat-vert {
 .error {
 	color: red;
 	font-size: small;
+}
+
+.panestack-title {
+	margin: 10px 310px 0px 10px;
+	padding-bottom: 3px;
+	border-bottom: 1px dotted gray;
+
+	.title {
+		font-size: 16px;
+		font-weight: normal;
+		margin: 10px 0;
+	}
+
+	a.title-button {
+		font-size: 12px;
+		margin-left: 8px;
+	}
+}
+
+.commentarea {
+	.menuarea {
+		border: none;
+		margin: 0 310px 10px 10px;
+		padding: 0;
+		color: gray;
+	}
+}
+
+.menuarea {
+	.spacer {
+		display: inline;
+		margin-right: 15px;
+	}
+}
+
+.dropdown {
+	cursor: default;
+	display: inline;
+	position: relative;
+
+	.lightdrop {
+		.selected {
+			position: relative;
+			background: none no-repeat scroll center right;
+			background-image: url(../droparrowgray.gif);
+			padding-right: 21px;
+			text-decoration: underline;
+			color: gray;
+		}
+	}
+}
+
+.selected, .choice.primary {
+	font-weight: bold;
+}
+
+.drop-choices {
+	position: absolute;
+	left: 0px;
+	border: 1px solid gray;
+	z-index: 100;
+	background-color: white;
+	white-space: nowrap;
+	line-height: normal;
+	margin-top: 1px;
+	display: none;
+
+	.lightdrop {
+		margin-top: 2px;
+	}
+
+	a.choice {
+		cursor: pointer;
+		padding: 2px 3px 1px 3px;
+		display: block;
+	}
+}
+
+.comment, .content .details {
+	margin-left: 10px;
+}
+
+.comment {
+	&.noncollapsed {
+		.usertext, .child, .buttons {
+			display: block;
+		}
+	}
+
+	.child, .showreplies {
+		margin-top: 10px;
+		margin-left: 15px;
+		border-left: 1px dotted #DDF;
+	}
 }

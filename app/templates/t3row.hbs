@@ -3,7 +3,7 @@
 {{vote-score score=score likes=likes}}
 {{thumbnail-preview url=url src=thumbnail}}
 <div class="entry">
-	<p class="title"><a {{bind-attr href=url}}>{{title}}</a> <span class="domain">({{link-to domain 'domain' domain}})</span></p>
+	<p class="title"><a {{bind-attr href=url}}>{{title}}</a> <span class="domain">({{link-to domain "domain" domain}})</span></p>
 	{{#if view.hasSelfText}}
 		<div {{bind-attr class=":expando-button :selftext view.isExpandoExpanded:expanded:collapsed"}} {{action "expandExpando" target=view}}></div>
 	{{/if}}

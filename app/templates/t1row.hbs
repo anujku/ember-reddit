@@ -1,0 +1,38 @@
+<p class="parent"></p>
+{{vote-score score=score likes=likes}}
+<div class="entry">
+	<div class="tagline">
+		<a href="javascript:void(0);" class="expand" {{action "toggleCollapse" target=view}}>
+			{{#if view.isCollapsed}}
+				[+]
+			{{else}}
+				[-]
+			{{/if}}
+		</a>
+		{{link-to author "user" author}}
+		<span class="userattrs"></span>
+		<div class="score"></div>
+		<time>{{time-ago datetime=created_utc}}</time>
+		&nbsp;
+		{{#if view.isCollapsed}}
+			<a href="javascript:void(0);" class="numchildren">(## children)</a>
+		{{/if}}
+	</div>
+
+	<div class="usertext-body md-container">
+		{{{view.renderedBody}}}
+	</div>
+
+	<ul class="flat-list buttons">
+		<li class="first">
+			{{link-to "permalink" "comments" subreddit id}}
+		</li>
+	</ul>
+</div>
+<div class="child">
+	<div class="sitetable listing">
+		{{#each child in view.children}}
+			{{view "t1row" context=child.data currentSub=view.currentSub}}
+		{{/each}}
+	</div>
+</div>

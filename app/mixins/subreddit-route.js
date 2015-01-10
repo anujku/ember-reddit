@@ -9,6 +9,7 @@ export default Ember.Mixin.create({
 	},
 
 	controllerName: 'subreddit',
+	templateName: 'subreddit/index',
 
 	model: function(params) {
 		params.subreddit = params.subreddit || this.paramsFor('subreddit').subreddit;
@@ -16,8 +17,8 @@ export default Ember.Mixin.create({
 	},
 
 	afterModel: function(model, transition) {
-		console.log(transition);
-		console.log(this.get('router'));
+		// console.log(transition);
+		// console.log(this.get('router'));
 	},
 
 	setupController: function(controller, model) {
