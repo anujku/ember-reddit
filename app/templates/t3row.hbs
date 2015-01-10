@@ -18,15 +18,13 @@
 		<li class="share"></li>
 	</ul>
 	{{#if view.hasSelfText}}
-		<div {{bind-attr class=":expando :usertext view.isExpandoExpanded::hide"}}>
-			<div class="usertext-body md-container">
-				{{{view.renderedSelfText}}}
-			</div>
-		</div>
+		{{#if view.isExpandoExpanded}}
+			{{partial "partials/self-text"}}
+		{{/if}}
 	{{/if}}
 	{{#if view.hasMediaEmbed}}
-		<div {{bind-attr class=":expando view.isExpandoExpanded::hide"}}>
-			{{!-- {{{view.renderedMediaEmbed}}} --}}
-		</div>
+		{{#if view.isExpandoExpanded}}
+			{{partial "partials/media-embed"}}
+		{{/if}}
 	{{/if}}
 </div>

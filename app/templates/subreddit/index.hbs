@@ -1,6 +1,6 @@
 <div id="siteTable" class="sitetable linklisting">
 	{{#each thing in model.children}}
-		{{view "thing" context=thing currentSub=currentSub}}
+		{{render "thing" thing}}
 	{{else}}
 		<p id="noresults" class="error">theredoesn't seem to be anything here</p>
 	{{/each}}
