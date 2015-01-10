@@ -1,5 +1,5 @@
 <p class="parent"></p>
-{{vote-score score=score likes=likes}}
+{{vote-score score=score likes=likes showScore=false}}
 <div class="entry">
 	<div class="tagline">
 		<a href="javascript:void(0);" class="expand" {{action "toggleCollapse" target=view}}>
@@ -15,7 +15,7 @@
 		<time>{{time-ago datetime=created_utc}}</time>
 		&nbsp;
 		{{#if view.isCollapsed}}
-			<a href="javascript:void(0);" class="numchildren">(## children)</a>
+			<a href="javascript:void(0);" class="numchildren">({{view.numChildren}} {{view.plurarizeChild}})</a>
 		{{/if}}
 	</div>
 

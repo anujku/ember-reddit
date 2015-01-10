@@ -572,9 +572,29 @@ ul.flat-vert {
 }
 
 .comment {
+	.midcol {
+		margin-left: 0px;
+		width: 15px;
+	}
+
 	&.noncollapsed {
 		.usertext, .child, .buttons {
 			display: block;
+		}
+
+		.midcol {
+			visibility: visible;
+		}
+	}
+
+	&.collapsed {
+		.usertext, .child, .buttons {
+			display: none;
+		}
+
+		.midcol {
+			visibility: hidden;
+			height: 1px;
 		}
 	}
 

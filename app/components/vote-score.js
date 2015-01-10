@@ -5,6 +5,8 @@ export default Ember.Component.extend({
 	classNames: ['midcol'],
 	classNameBindings: ['like:likes:dislikes', 'voted::unvoted'],
 
+	showScore: true,
+
 	displayScore: Ember.computed('score', 'likes', function() {
 		if (this.get('likes') === true) {
 			return this.get('score') + 1;
