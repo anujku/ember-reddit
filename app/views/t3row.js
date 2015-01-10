@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 	templateName: 't3row',
-	classNames: ['t3'],
+	classNames: ['t3', 'link'],
 
 	hasSelfText: Ember.computed('context.selftext_html', function() {
 		return !!this.get('context.selftext_html');

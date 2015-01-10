@@ -11,7 +11,7 @@
 		</a>
 		{{link-to author "user" author}}
 		<span class="userattrs"></span>
-		<div class="score"></div>
+		<span class="score">{{score}} {{view.plurarizePoint}}</span>
 		<time>{{time-ago datetime=created_utc}}</time>
 		&nbsp;
 		{{#if view.isCollapsed}}

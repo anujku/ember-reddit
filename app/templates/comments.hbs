@@ -7,7 +7,9 @@
 </div>
 
 <div class="commentarea">
-	<div class="panestack-title"></div>
+	<div class="panestack-title">
+		<span class="title">{{totalNumComments}} {{plurarizeComment}}</span>
+	</div>
 	<div class="menuarea"></div>
 	<div class="sitetable nestedlisting">
 		{{#each thing in model.comments.children}}
