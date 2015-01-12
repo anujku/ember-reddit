@@ -7,17 +7,17 @@ export default Ember.Controller.extend({
 
 	currentSub: null,
 
-	hasPost: Ember.computed('model.post.children', function() {
-		var postChildren = this.get('model.post.children');
+	hasPost: Ember.computed('model.listings.post.children', function() {
+		var postChildren = this.get('model.listings.post.children');
 		return postChildren && postChildren.length !== 0;
 	}),
 
-	postThing: Ember.computed('model.post.children', function() {
-		return this.get('model.post.children').objectAt(0);
+	postThing: Ember.computed('model.listings.post.children', function() {
+		return this.get('model.listings.post.children').objectAt(0);
 	}),
 
-	totalNumComments: Ember.computed('model.comments', function() {
-		return calcChildren(this.get('model.comments'));
+	totalNumComments: Ember.computed('model.listings.comments', function() {
+		return calcChildren(this.get('model.listings.comments'));
 	}),
 
 	plurarizeComment: Ember.computed('totalNumComments', function() {

@@ -692,6 +692,9 @@ ul.flat-vert {
 	}
 
 	&.collapsed {
+		padding-bottom: 10px;
+		line-height: 14px;
+
 		.usertext, .child, .buttons {
 			display: none;
 		}
@@ -699,6 +702,14 @@ ul.flat-vert {
 		.midcol {
 			visibility: hidden;
 			height: 1px;
+		}
+
+		.tagline, .tagline a {
+			color: gray;
+
+			:not(.expand) {
+				font-style: italic;
+			}
 		}
 	}
 

@@ -4,12 +4,17 @@ export default Ember.Route.extend({
 
 	model: function(params) {
 		params.subreddit = this.paramsFor('subreddit').subreddit;
-		return this.store.find('comments', params);
+
+		return Ember.RSVP.hash({
+			listings: this.store.find('comments', Ember.$.extend({}, params)),
+			about: this.store.find('about', Ember.$.extend({}, params))
+		});
 	},
 
 	setupController: function(controller, model) {
 		this._super(controller, model);
 
+		// TODO, remove this
 		controller.set('currentSub', this.paramsFor('subreddit').subreddit);
 	},
 

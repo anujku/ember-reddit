@@ -8,7 +8,7 @@ export default Ember.Object.extend({
 		console.log(params);
 
 		// build the url
-		var url = 'https://www.reddit.com/r/' + params.subreddit + '/comments/' + params.name;
+		var url = 'https://www.reddit.com/comments/' + params.name;
 
 		// remove unwanted keys on params
 		delete params.subreddit;

@@ -13,13 +13,17 @@ export default Ember.Mixin.create({
 
 	model: function(params) {
 		params.subreddit = params.subreddit || this.paramsFor('subreddit').subreddit;
-		return this.store.find('subreddit', params);
+
+		// need to use unique instances of params for each of these
+		return Ember.RSVP.hash({
+			listing: this.store.find('subreddit', Ember.$.extend({}, params)),
+			about: this.store.find('about', Ember.$.extend({}, params))
+		});
 	},
 
 	afterModel: function(model, transition) {
 		// console.log(transition);
 		// console.log(this.get('router'));
-		console.log(model);
 	},
 
 	setupController: function(controller, model) {
@@ -50,8 +54,6 @@ export default Ember.Mixin.create({
 			outlet: 'tabmenu',
 			controller: 'subreddit'
 		});
-
-		console.log(model.about);
 
 		this.render('sidepanel', {
 			into: 'application',
