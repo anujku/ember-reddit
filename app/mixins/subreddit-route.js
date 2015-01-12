@@ -54,7 +54,9 @@ export default Ember.Mixin.create({
 
 		this.render('sidepanel', {
 			into: 'application',
-			outlet: 'sidepanel'
+			outlet: 'sidepanel',
+			controller: 'sidepanel',
+			model: model.about
 		});
 	}
 });

@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import decodeHtml from '../utils/decode-html';
 
 export default Ember.ObjectController.extend({
 	queryParams: ['t', 'count', 'after', 'before'],
@@ -34,29 +33,5 @@ export default Ember.ObjectController.extend({
 		}
 
 		return 0;
-	}),
-
-	renderedDescription: Ember.computed('model.about.data.description_html', function() {
-		return decodeHtml(this.get('model.about.data.description_html'));
-	}),
-
-	subscribersString: Ember.computed('model.about.data.subscribers', function() {
-		var subscribers = this.get('model.about.data.subscribers');
-
-		if (Ember.$.isNumeric(subscribers)) {
-			return subscribers.toLocaleString();
-		}
-
-		return '';
-	}),
-
-	activeAccountsString: Ember.computed('model.about.data.accounts_active', function() {
-		var accounts = this.get('model.about.data.accounts_active');
-
-		if (Ember.$.isNumeric(accounts)) {
-			return accounts.toLocaleString();
-		}
-
-		return '';
 	})
 });
