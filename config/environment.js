@@ -40,7 +40,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = 'http://harris-miller.github.io/ember-reddit/';
   }
 
   return ENV;
