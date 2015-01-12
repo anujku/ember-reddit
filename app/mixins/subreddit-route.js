@@ -19,6 +19,7 @@ export default Ember.Mixin.create({
 	afterModel: function(model, transition) {
 		// console.log(transition);
 		// console.log(this.get('router'));
+		console.log(model);
 	},
 
 	setupController: function(controller, model) {
@@ -49,6 +50,8 @@ export default Ember.Mixin.create({
 			outlet: 'tabmenu',
 			controller: 'subreddit'
 		});
+
+		console.log(model.about);
 
 		this.render('sidepanel', {
 			into: 'application',

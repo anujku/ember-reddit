@@ -6,6 +6,8 @@ import parseListing from '../utils/parse-listing';
 export default Ember.Object.extend({
 	find: function(name, params) {
 
+		var isFrontpage = false;
+
 		// build the url
 		var url = 'https://www.reddit.com/';
 
@@ -13,6 +15,9 @@ export default Ember.Object.extend({
 		if (params.subreddit) {
 			url += 'r/' + params.subreddit;
 			delete params.subreddit;
+		}
+		else {
+			isFrontpage = true;
 		}
 
 		var aboutUrl = url + '/about.json';
@@ -38,11 +43,19 @@ export default Ember.Object.extend({
 		});
 
 		// also make a call to /r/{subreddit}/about.json
-		var about = ajax({
-			url: aboutUrl
-		}).then(function(result) {
-			return thing.create(result);
-		});
+		// if not isFrontpage
+		var about;
+		if (!isFrontpage) {
+			about = ajax({
+				url: aboutUrl
+			}).then(function(result) {
+				return thing.create(result);
+			});
+		}
+		else {
+			// just return an instance of thing with an empty object to it's constructor
+			about = Ember.RSVP.resolve(thing.create({}));
+		}
 
 		return Ember.RSVP.hash({listing: listing, about: about});
 	}

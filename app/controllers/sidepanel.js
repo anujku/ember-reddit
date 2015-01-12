@@ -2,6 +2,11 @@ import Ember from 'ember';
 import decodeHtml from '../utils/decode-html';
 
 export default Ember.Controller.extend({
+
+	hasModel: Ember.computed('model.data', function() {
+		return !!this.get('model.data');
+	}),
+
 	renderedDescription: Ember.computed('model.data.description_html', function() {
 		return decodeHtml(this.get('model.data.description_html'));
 	}),

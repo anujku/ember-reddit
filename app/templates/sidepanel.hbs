@@ -39,39 +39,41 @@
 	</div>
 </div>
 
-<div class="spacer">
-	<div class="titlebox">
-		<h1 class="hover redditname">
-			{{model.data.display_name}}
-		</h1>
+{{#if hasModel}}
+	<div class="spacer">
+		<div class="titlebox">
+			<h1 class="hover redditname">
+				{{model.data.display_name}}
+			</h1>
 
-		<span class="subscribe-button fancy-toggle-button toggle">
-			<a href="javascript:void(0)" class="option active add" tabindex="100">subscribe</a>
-			<a href="javascript:void(0)" class="option remove">unsubscribe</a>
-		</span>
-
-		<span class="subscriber">
-			<span class="number">{{subscribersString}}</span>
-			<span class="word">readers</span> {{!TODO: auto-plurilize}}
-		</span>
-
-		<p class="users-online fuzzed" title="logged-in users viewing this subreddit in the past 15 minutes">
-			<span class="number">~{{activeAccountsString}}</span>
-			<span class="word">users here now</span> {{!TODO: auto-plurilize}}
-		</p>
-
-		<div class="usertext-body md-container">
-			{{{renderedDescription}}}
-		</div>
-
-		<div class="bottom">
-			created by <a href="javascript:void(0);">TODO</a>
-			<span class="userattrs"></span>
-			<span class="age">
-				a communitry for {{time-ago datetime=model.data.created_utc noSuffix=true}}
+			<span class="subscribe-button fancy-toggle-button toggle">
+				<a href="javascript:void(0)" class="option active add" tabindex="100">subscribe</a>
+				<a href="javascript:void(0)" class="option remove">unsubscribe</a>
 			</span>
-		</div>
 
-		<div class="clear"></div>
+			<span class="subscriber">
+				<span class="number">{{subscribersString}}</span>
+				<span class="word">readers</span> {{!TODO: auto-plurilize}}
+			</span>
+
+			<p class="users-online fuzzed" title="logged-in users viewing this subreddit in the past 15 minutes">
+				<span class="number">~{{activeAccountsString}}</span>
+				<span class="word">users here now</span> {{!TODO: auto-plurilize}}
+			</p>
+
+			<div class="usertext-body md-container">
+				{{{renderedDescription}}}
+			</div>
+
+			<div class="bottom">
+				created by <a href="javascript:void(0);">TODO</a>
+				<span class="userattrs"></span>
+				<span class="age">
+					a communitry for {{time-ago datetime=model.data.created_utc noSuffix=true}}
+				</span>
+			</div>
+
+			<div class="clear"></div>
+		</div>
 	</div>
-</div>
+{{/if}}
