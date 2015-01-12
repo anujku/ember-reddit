@@ -30,8 +30,8 @@ export default Ember.Mixin.create({
 			count = count - 25;
 		}
 
-		for (var i = 0; i < model.children.length; i++) {
-			model.children[i].data.index = count + i;
+		for (var i = 0; i < model.listing.get('children').length; i++) {
+			model.listing.get('children')[i].data.index = count + i;
 		}
 
 		this._super(controller, model);
@@ -41,13 +41,20 @@ export default Ember.Mixin.create({
 		controller.set('currentSub', this.paramsFor('subreddit').subreddit);
 	},
 
-	renderTemplate: function() {
+	renderTemplate: function(controller, model) {
 		this._super();
+
+		console.log(model);
 
 		this.render('tabmenu/subreddit', {
 			into: 'application',
 			outlet: 'tabmenu',
 			controller: 'subreddit'
+		});
+
+		this.render('sidepanel', {
+			into: 'application',
+			outlet: 'sidepanel'
 		});
 	}
 });

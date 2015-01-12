@@ -18,5 +18,11 @@ export default Ember.Component.extend({
 
 	ago: Ember.computed('dateMoment', function() {
 		return this.get('dateMoment').fromNow();
-	})
+	}),
+
+	from: Ember.computed('dateMoment', function() {
+		return this.get('dateMoment').fromNow(true);
+	}),
+
+	noSuffix: false
 });

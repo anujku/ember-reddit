@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import calcChildren from '../utils/calc-children';
+import decodeHtml from '../utils/decode-html';
 
 export default Ember.View.extend({
 	templateName: 't1row',
@@ -9,7 +10,7 @@ export default Ember.View.extend({
 	isCollapsed: false,
 
 	renderedBody: Ember.computed('context.body_html', function() {
-		return Ember.$('<div>').html(this.get('context.body_html')).text();
+		return decodeHtml(this.get('context.body_html'));
 	}),
 
 	actions: {

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import decodeHtml from '../utils/decode-html';
 
 export default Ember.View.extend({
 	templateName: 't3row',
@@ -10,7 +11,7 @@ export default Ember.View.extend({
 	}),
 
 	renderedSelfText: Ember.computed('context.selftext_html', function() {
-		return Ember.$('<div>').html(this.get('context.selftext_html')).text();
+		return decodeHtml(this.get('context.selftext_html'));
 	}),
 
 	hasMediaEmbed: Ember.computed('context.media_embed', function() {
@@ -18,7 +19,7 @@ export default Ember.View.extend({
 	}),
 
 	renderedMediaEmbed: Ember.computed('context.media_embed', function() {
-		return Ember.$('<div>').html(this.get('context.media_embed').content).text();
+		return decodeHtml(this.get('context.media_embed').content);
 	}),
 
 	isExpandoExpanded: false,
