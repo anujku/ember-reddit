@@ -44,8 +44,6 @@ export default Ember.Mixin.create({
 	renderTemplate: function(controller, model) {
 		this._super();
 
-		console.log(model);
-
 		this.render('tabmenu/subreddit', {
 			into: 'application',
 			outlet: 'tabmenu',
