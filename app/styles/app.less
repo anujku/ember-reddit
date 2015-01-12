@@ -813,6 +813,27 @@ label + #moresearchinfo {
 	margin-top: 0px;
 }
 
+.fancy-toggle-button {
+	display: block;
+	margin-bottom: 5px;
+
+	.active {
+		border: 1px solid #444;
+		padding: 1px 6px;
+		background: #ffffff none repeat-x scroll center left;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 20px;
+		border-radius: 3px;
+	}
+
+	.add {
+		.sprite();
+		background-position: 0px 0px;
+	}
+}
+
 .titlebox {
 	font-size: larger;
 
@@ -834,6 +855,11 @@ label + #moresearchinfo {
 	.age {
 		float: right;
 	}
+
+	.fancy-toggle-button {
+		display: inline-block;
+		margin-right: 5px;
+	}
 }
 
 .users-online {
@@ -843,5 +869,15 @@ label + #moresearchinfo {
 		.beforeMixin();
 		.sprite();
 		background-position: -66px -730px;
+	}
+}
+
+.toggle {
+	.option {
+		display: none;
+
+		&.active {
+			display: inline;
+		}
 	}
 }

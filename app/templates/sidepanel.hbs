@@ -41,9 +41,14 @@
 
 <div class="spacer">
 	<div class="titlebox">
-		<h1 class="however redditname">
+		<h1 class="hover redditname">
 			{{model.about.data.display_name}}
 		</h1>
+
+		<span class="subscribe-button fancy-toggle-button toggle">
+			<a href="javascript:void(0)" class="option active add" tabindex="100">subscribe</a>
+			<a href="javascript:void(0)" class="option remove">unsubscribe</a>
+		</span>
 
 		<span class="subscriber">
 			<span class="number">{{subscribersString}}</span>
